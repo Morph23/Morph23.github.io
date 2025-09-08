@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Your Name</title>
+    <style>
+      body { font-family: system-ui, Arial, sans-serif; margin: 0; }
+      header { padding: 64px 20px; text-align: center; }
+      h1 { margin: 0 0 8px; }
+      .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); padding: 20px; }
+      .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; }
+      footer { padding: 32px 20px; text-align: center; color: #666; }
+      a { color: inherit; text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Hi, I’m Your Name</h1>
+      <p>I build things with code. Here are a few projects.</p>
+    </header>
+
+    <main class="grid">
+      <a class="card" href="#">
+        <h3>Project One →</h3>
+        <p>Short description of what it is and why it’s cool.</p>
+      </a>
+      <a class="card" href="#">
+        <h3>Project Two →</h3>
+        <p>Another quick blurb.</p>
+      </a>
+      <a class="card" href="#">
+        <h3>Contact →</h3>
+        <p>you@example.com</p>
+      </a>
+    </main>
+
+    <footer>© <span id="y"></span> Your Name</footer>
+    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  </body>
+</html>
