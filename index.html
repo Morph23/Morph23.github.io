@@ -3,39 +3,123 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Kshitij Sekhar Dutta</title>
+    <title>Kshitij Sekhar Dutta - Portfolio</title>
     <style>
-      body { font-family: system-ui, Arial, sans-serif; margin: 0; }
-      header { padding: 64px 20px; text-align: center; }
-      h1 { margin: 0 0 8px; }
-      .grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); padding: 20px; }
-      .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; }
-      footer { padding: 32px 20px; text-align: center; color: #666; }
-      a { color: inherit; text-decoration: none; }
+      * { box-sizing: border-box; margin:0; padding:0; }
+      body { font-family: Arial, sans-serif; line-height: 1.6; color:#333; }
+
+      /* Header / Hero */
+      header {
+        background: #0d6efd; /* blue */
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+      }
+      header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+      header p { font-size: 1.2rem; }
+
+      /* Projects */
+      section.projects {
+        padding: 60px 20px;
+        max-width: 1000px;
+        margin: auto;
+      }
+      section.projects h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2rem;
+        color:#0d6efd;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+      }
+      .card {
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 20px;
+        background: white;
+        transition: transform 0.2s;
+      }
+      .card:hover { transform: translateY(-5px); }
+      .card h3 { margin-bottom: 10px; color:#0d6efd; }
+      .card p { color:#555; }
+
+      /* Contact */
+      section.contact {
+        background: #f5f5f5;
+        padding: 60px 20px;
+        text-align: center;
+      }
+      section.contact h2 {
+        margin-bottom: 20px;
+        color:#0d6efd;
+      }
+      section.contact a {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px 20px;
+        background: #0d6efd;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+      section.contact a:hover { background: #0b5ed7; }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 0.9rem;
+        color: #666;
+      }
     </style>
   </head>
   <body>
+    <!-- Hero Section -->
     <header>
-      <h1>Hi, I’m Kshitij</h1>
-      <p>I build things with code. Here are a few projects.</p>
+      <h1>Hello, I’m Kshitij Sekhar Dutta 👋</h1>
+      <p>I build cool projects with code. Welcome to my portfolio.</p>
     </header>
 
-    <main class="grid">
-      <a class="card" href="#">
-        <h3>Project One →</h3>
-        <p>Short description of what it is and why it’s cool.</p>
-      </a>
-      <a class="card" href="#">
-        <h3>Project Two →</h3>
-        <p>Another quick blurb.</p>
-      </a>
-      <a class="card" href="#">
-        <h3>Contact →</h3>
-        <p>you@example.com</p>
-      </a>
-    </main>
+    <!-- Projects -->
+    <section class="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Project One</h3>
+          <p>Brief description of your project. What does it do? Why is it cool?</p>
+        </div>
+        <div class="card">
+          <h3>Project Two</h3>
+          <p>Brief description of your project. Add a GitHub link or demo.</p>
+        </div>
+        <div class="card">
+          <h3>Project Three</h3>
+          <p>Brief description of your project. Showcase your skills here.</p>
+        </div>
+      </div>
+    </section>
 
-    <footer>© <span id="y"></span> Kshitij Sekhar Dutta </footer>
-    <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+    <!-- Contact -->
+    <section class="contact">
+      <h2>Contact Me</h2>
+      <p>Let’s connect! You can reach me at:</p>
+      <a href="mailto:yourname@example.com">Email Me</a>
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/yourusername/" target="_blank">LinkedIn</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      © <span id="year"></span> Kshitij Sekhar Dutta. All rights reserved.
+    </footer>
+
+    <script>
+      // Auto-update year
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
