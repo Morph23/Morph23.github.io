@@ -37,6 +37,38 @@
           "Segoe UI", sans-serif;
         line-height: 1.7;
         -webkit-font-smoothing: antialiased;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: -30% -40%;
+        z-index: 0;
+        background:
+          radial-gradient(circle at 20% 20%, rgba(74, 222, 128, 0.07), transparent 55%),
+          radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.05), transparent 60%),
+          radial-gradient(circle at 50% 80%, rgba(244, 114, 182, 0.05), transparent 65%);
+        filter: blur(40px);
+        transform: translate3d(0, 0, 0) scale(1.1);
+        animation: shimmer 18s ease-in-out infinite alternate;
+        pointer-events: none;
+      }
+
+      @keyframes shimmer {
+        0% {
+          transform: translate3d(-3%, -2%, 0) scale(1.05);
+          opacity: 0.5;
+        }
+        50% {
+          transform: translate3d(2%, 1%, 0) scale(1.08);
+          opacity: 0.65;
+        }
+        100% {
+          transform: translate3d(4%, 3%, 0) scale(1.02);
+          opacity: 0.45;
+        }
       }
 
       main {
@@ -460,7 +492,7 @@
     </style>
   </head>
   <body>
-    <main>
+  <main style="position: relative; z-index: 1;">
       <header>
         <div class="hero">
           <span class="eyebrow">Data &amp; AI Engineer · Dublin</span>
