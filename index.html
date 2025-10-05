@@ -3,122 +3,795 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Kshitij Sekhar Dutta - Portfolio</title>
+    <title>Kshitij Sekhar Dutta · Data & AI Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      * { box-sizing: border-box; margin:0; padding:0; }
-      body { font-family: Arial, sans-serif; line-height: 1.6; color:#333; }
+      :root {
+        --bg: #050505;
+        --surface: #0f0f11;
+        --muted: #9a9a9a;
+        --accent: #4ade80;
+        --accent-soft: rgba(74, 222, 128, 0.08);
+        --text: #f5f5f5;
+        --border: rgba(255, 255, 255, 0.08);
+        --shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+        font-size: 16px;
+      }
 
-      /* Header / Hero */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--text);
+        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        line-height: 1.7;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      main {
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      section {
+        padding: 80px 6vw;
+      }
+
+      .container {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+
       header {
-        background: #0d6efd; /* blue */
-        color: white;
-        padding: 80px 20px;
-        text-align: center;
+        padding: clamp(96px, 18vw, 160px) 6vw 120px;
+        position: relative;
+        overflow: hidden;
       }
-      header h1 { font-size: 2.5rem; margin-bottom: 10px; }
-      header p { font-size: 1.2rem; }
 
-      /* Projects */
-      section.projects {
-        padding: 60px 20px;
-        max-width: 1000px;
-        margin: auto;
+      header::before {
+        content: "";
+        position: absolute;
+        inset: -40% auto auto -30%;
+        width: clamp(420px, 60vw, 580px);
+        aspect-ratio: 1;
+        background: radial-gradient(
+          circle at center,
+          rgba(74, 222, 128, 0.22),
+          rgba(74, 222, 128, 0)
+        );
+        filter: blur(10px);
+        z-index: 0;
       }
-      section.projects h2 {
-        text-align: center;
-        margin-bottom: 40px;
-        font-size: 2rem;
-        color:#0d6efd;
+
+      header::after {
+        content: "";
+        position: absolute;
+        inset: auto -20% -40% auto;
+        width: clamp(300px, 48vw, 520px);
+        aspect-ratio: 1;
+        background: radial-gradient(
+          circle at center,
+          rgba(59, 130, 246, 0.15),
+          rgba(59, 130, 246, 0)
+        );
+        filter: blur(14px);
+        z-index: 0;
       }
+
+      .hero {
+        position: relative;
+        z-index: 1;
+        max-width: 760px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: rgba(74, 222, 128, 0.14);
+        color: var(--accent);
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 24px;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 6px rgba(74, 222, 128, 0.18);
+      }
+
+      h1 {
+        font-size: clamp(2.8rem, 4vw, 4.2rem);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 26px;
+      }
+
+      .hero p {
+        font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+        color: var(--muted);
+        max-width: 44ch;
+        margin-bottom: 36px;
+      }
+
+      .cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border-radius: 999px;
+        padding: 14px 24px;
+        font-size: 0.98rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: #041205;
+        box-shadow: 0 10px 30px rgba(74, 222, 128, 0.35);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 40px rgba(74, 222, 128, 0.45);
+      }
+
+      .btn-ghost {
+        border: 1px solid var(--border);
+        color: var(--text);
+        background: rgba(255, 255, 255, 0.02);
+      }
+
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-2px);
+        border-color: rgba(255, 255, 255, 0.14);
+      }
+
+      .meta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px 28px;
+        margin-top: 54px;
+        color: var(--muted);
+        font-size: 0.95rem;
+      }
+
+      .meta-row span {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+      }
+
+      h2 {
+        font-size: clamp(2rem, 3vw, 2.6rem);
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        margin-bottom: 18px;
+      }
+
+      .section-lead {
+        color: var(--muted);
+        max-width: 56ch;
+        margin-bottom: 48px;
+        font-size: 1.05rem;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 24px;
+      }
+
+      .stat-card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        box-shadow: var(--shadow);
+      }
+
+      .stat-card span {
+        font-size: 0.9rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .stat-card strong {
+        font-size: clamp(2rem, 3vw, 2.8rem);
+        font-weight: 600;
+        color: var(--accent);
+      }
+
       .grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 28px;
       }
+
       .card {
-        border: 1px solid #ddd;
+        background: linear-gradient(155deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0));
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 20px;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        transition: transform 0.2s ease, border 0.2s ease, background 0.2s ease;
+        backdrop-filter: blur(6px);
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(74, 222, 128, 0.35);
+        background: linear-gradient(155deg, rgba(74, 222, 128, 0.1), rgba(15, 15, 17, 0.65));
+      }
+
+      .card h3 {
+        font-size: 1.35rem;
+        font-weight: 500;
+      }
+
+      .card p {
+        color: var(--muted);
+        font-size: 0.98rem;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: auto;
+      }
+
+      .tag {
+        padding: 6px 12px;
         border-radius: 12px;
-        padding: 20px;
-        background: white;
-        transition: transform 0.2s;
+        background: rgba(148, 163, 184, 0.12);
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 0.82rem;
+        letter-spacing: 0.02em;
       }
-      .card:hover { transform: translateY(-5px); }
-      .card h3 { margin-bottom: 10px; color:#0d6efd; }
-      .card p { color:#555; }
 
-      /* Contact */
-      section.contact {
-        background: #f5f5f5;
-        padding: 60px 20px;
-        text-align: center;
-      }
-      section.contact h2 {
-        margin-bottom: 20px;
-        color:#0d6efd;
-      }
-      section.contact a {
-        display: inline-block;
-        margin: 10px;
-        padding: 10px 20px;
-        background: #0d6efd;
-        color: white;
-        border-radius: 6px;
+      .card a {
+        color: var(--accent);
+        font-size: 0.94rem;
         text-decoration: none;
-        transition: background 0.2s;
+        display: inline-flex;
+        gap: 6px;
+        align-items: center;
+        margin-top: 8px;
       }
-      section.contact a:hover { background: #0b5ed7; }
 
-      /* Footer */
-      footer {
-        text-align: center;
-        padding: 20px;
+      .card a:hover {
+        text-decoration: underline;
+      }
+
+      .timeline {
+        display: grid;
+        gap: 24px;
+        position: relative;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 10px;
+        top: 4px;
+        bottom: 4px;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .timeline-item {
+        position: relative;
+        padding-left: 48px;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 8px;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 0 6px var(--accent-soft);
+      }
+
+      .timeline-item h3 {
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+
+      .timeline-item span {
+        display: inline-block;
+        margin-top: 6px;
+        margin-bottom: 12px;
+        color: var(--muted);
         font-size: 0.9rem;
-        color: #666;
+      }
+
+      ul.bullets {
+        display: grid;
+        gap: 10px;
+        color: var(--muted);
+        font-size: 0.95rem;
+        list-style: none;
+      }
+
+      ul.bullets li {
+        position: relative;
+        padding-left: 18px;
+      }
+
+      ul.bullets li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--accent);
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 22px;
+      }
+
+      .skill-block {
+        background: var(--surface);
+        border-radius: 18px;
+        border: 1px solid var(--border);
+        padding: 24px;
+        display: grid;
+        gap: 12px;
+      }
+
+      .skill-block h3 {
+        font-size: 1rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .skill-block p {
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .contact-card {
+        background: linear-gradient(150deg, rgba(74, 222, 128, 0.12), rgba(4, 18, 5, 0.85));
+        border-radius: 26px;
+        border: 1px solid rgba(74, 222, 128, 0.25);
+        padding: clamp(32px, 6vw, 56px);
+        box-shadow: 0 24px 60px rgba(4, 18, 5, 0.55);
+        text-align: center;
+      }
+
+      .contact-card p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.05rem;
+        margin-bottom: 28px;
+      }
+
+      .links-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        justify-content: center;
+      }
+
+      footer {
+        padding: 42px 6vw 60px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 720px) {
+        header {
+          padding-top: 120px;
+          padding-bottom: 80px;
+        }
+
+        section {
+          padding: 64px 6vw;
+        }
+
+        .timeline::before {
+          left: 6px;
+        }
+
+        .timeline-item {
+          padding-left: 36px;
+        }
+
+        .timeline-item::before {
+          left: 0;
+        }
       }
     </style>
   </head>
   <body>
-    <!-- Hero Section -->
-    <header>
-      <h1>Hello, I’m Kshitij Sekhar Dutta 👋</h1>
-      <p>I build cool projects with code. Welcome to my portfolio.</p>
-    </header>
-
-    <!-- Projects -->
-    <section class="projects">
-      <h2>Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Project One</h3>
-          <p>Brief description of your project. What does it do? Why is it cool?</p>
+    <main>
+      <header>
+        <div class="hero">
+          <span class="eyebrow">Data &amp; AI Engineer · Dublin</span>
+          <h1>Kshitij Sekhar Dutta helps data-heavy teams ship intelligent products faster.</h1>
+          <p>
+            MSc. Computer Science student at University College Dublin building practical machine
+            learning systems—from counterfactual explainability to video restoration. 4+ internships
+            across airports, mobility, and ed-tech with a focus on applied AI and analytics.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="mailto:kshitijsdutta@gmail.com">Let’s collaborate</a>
+            <a
+              class="btn btn-ghost"
+              href="Kshitij Sekhar Dutta CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Download CV
+            </a>
+            <a
+              class="btn btn-ghost"
+              href="https://github.com/Morph23"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub · Morph23
+            </a>
+          </div>
+          <div class="meta-row">
+            <span>📍 Dublin &amp; open to relocation</span>
+            <span class="dot"></span>
+            <span>🎓 GPA 3.7 · UCD (MSc 2024-2025)</span>
+            <span class="dot"></span>
+            <span>👨‍💻 Since 2020 on GitHub · 26 public repositories</span>
+          </div>
         </div>
-        <div class="card">
-          <h3>Project Two</h3>
-          <p>Brief description of your project. Add a GitHub link or demo.</p>
-        </div>
-        <div class="card">
-          <h3>Project Three</h3>
-          <p>Brief description of your project. Showcase your skills here.</p>
-        </div>
-      </div>
-    </section>
+      </header>
 
-    <!-- Contact -->
-    <section class="contact">
-      <h2>Contact Me</h2>
-      <p>Let’s connect! You can reach me at:</p>
-      <a href="mailto:yourname@example.com">Email Me</a>
-      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/yourusername/" target="_blank">LinkedIn</a>
-    </section>
+      <section>
+        <div class="container">
+          <h2>Snapshot</h2>
+          <p class="section-lead">
+            A quick overview of the impact behind the code—spanning autonomous traffic enforcement,
+            airport NLP, and storytelling with data-driven visuals.
+          </p>
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span>Operational AI</span>
+              <strong>98%+</strong>
+              <p>Precision in real-time traffic violation detection with YOLOv8 at Wictronix.</p>
+            </article>
+            <article class="stat-card">
+              <span>Intelligent Video</span>
+              <strong>20%</strong>
+              <p>Visual quality improvement for compressed footage via deformable GAN pipelines.</p>
+            </article>
+            <article class="stat-card">
+              <span>Applied Research</span>
+              <strong>220K</strong>
+              <p>Reddit data points mined for published sentiment analysis in IJCA (Vol.186).</p>
+            </article>
+            <article class="stat-card">
+              <span>Experience</span>
+              <strong>4</strong>
+              <p>Industry internships across aviation, mobility, analytics, and education sectors.</p>
+            </article>
+          </div>
+        </div>
+      </section>
 
-    <!-- Footer -->
+      <section>
+        <div class="container">
+          <h2>Featured GitHub Work</h2>
+          <p class="section-lead">
+            Selected repositories from <a href="https://github.com/Morph23" target="_blank" rel="noopener noreferrer">Morph23</a>
+            that reflect a hands-on approach to explainable AI, NLP, and applied computer vision.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <div>
+                <h3>MeetPlot</h3>
+                <p>
+                  Zoom transcript analytics with spaCy NER, NLTK summarisation, and NetworkX speaker graphs to surface conversation dynamics automatically.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">Python</span>
+                <span class="tag">NLP</span>
+                <span class="tag">NetworkX</span>
+              </div>
+              <a href="https://github.com/Morph23/MeetPlot" target="_blank" rel="noopener noreferrer">Explore repository →</a>
+            </article>
+
+            <article class="card">
+              <div>
+                <h3>DiceyLoans</h3>
+                <p>
+                  Counterfactual explanations for credit decisions using DiCE to flip outcomes and surface responsible lending levers from logistic regression baselines.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">Explainable AI</span>
+                <span class="tag">Python</span>
+                <span class="tag">DiCE</span>
+              </div>
+              <a href="https://github.com/Morph23/DiceyLoans" target="_blank" rel="noopener noreferrer">Explore repository →</a>
+            </article>
+
+            <article class="card">
+              <div>
+                <h3>GIFEnhancer</h3>
+                <p>
+                  Self-supervised restoration of compressed GIFs through a custom DCGAN-influenced PyTorch model optimised for artefact reduction.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">PyTorch</span>
+                <span class="tag">GAN</span>
+                <span class="tag">Computer Vision</span>
+              </div>
+              <a href="https://github.com/Morph23/GIFEnhancer" target="_blank" rel="noopener noreferrer">Explore repository →</a>
+            </article>
+
+            <article class="card">
+              <div>
+                <h3>AnimalMaker</h3>
+                <p>
+                  Tesseract OCR meets generative illustration—transforming handwriting into whimsical animal sketches with tunable controls.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">Computer Vision</span>
+                <span class="tag">OCR</span>
+                <span class="tag">Creative Tech</span>
+              </div>
+              <a href="https://github.com/Morph23/AnimalMaker" target="_blank" rel="noopener noreferrer">Explore repository →</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2>Projects in Focus</h2>
+          <p class="section-lead">
+            Recent academic and independent builds connecting research grounded theory with measurable business value.
+          </p>
+          <div class="grid">
+            <article class="card">
+              <div>
+                <h3>Compressed Video Enhancement</h3>
+                <p>
+                  Deployed deformable convolution GANs with QP-aware modules to restore H.265 footage, elevating visual fidelity by ~20% across varied bitrates.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">PyTorch</span>
+                <span class="tag">GAN</span>
+                <span class="tag">CUDA</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div>
+                <h3>Sales Forecasting with CNN-LSTM</h3>
+                <p>
+                  Blended temporal convolutions, lag features, and LightGBM tuning to deliver robust demand predictions on high-frequency retail datasets.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">Time Series</span>
+                <span class="tag">TensorFlow</span>
+                <span class="tag">LightGBM</span>
+              </div>
+            </article>
+
+            <article class="card">
+              <div>
+                <h3>Sentiment Intelligence for AdTech</h3>
+                <p>
+                  Published study combining bot detection, VADER sentiment, and readability scores to rank subreddits for campaign relevance from 220K datapoints.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">NLP</span>
+                <span class="tag">Data Mining</span>
+                <span class="tag">Research</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2>Experience</h2>
+          <p class="section-lead">
+            Blending academic research and industry rotations to architect AI systems that are reliable, efficient, and ready for production.
+          </p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>Intern · Adani Airport Holdings Ltd</h3>
+              <span>Feb 2024 – Apr 2024 · Ahmedabad</span>
+              <ul class="bullets">
+                <li>Fine-tuned domain-specific transformer models to automate reporting and analytics workflows for airport operations.</li>
+                <li>Optimised LLM inference pipelines with distributed training and latency-aware tuning.</li>
+                <li>Partnered with transformation teams to modernise legacy systems and track delivery via Kanban.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <h3>AI/ML Intern · Wictronix</h3>
+              <span>Jun 2023 – Aug 2023 · Bengaluru</span>
+              <ul class="bullets">
+                <li>Deployed YOLOv8-powered traffic analysis to 25+ city intersections with 98% detection accuracy in production.</li>
+                <li>Reduced response latency for violation alerts from ~2 seconds to under 200 milliseconds.</li>
+              </ul>
+            </div>
+
+            <div class="timeline-item">
+              <h3>Intern · DeFactoED</h3>
+              <span>May 2023 – Jul 2023 · Remote</span>
+              <ul class="bullets">
+                <li>Produced insight-driven reports on generative AI adoption across 100+ educational institutions in South-East Asia.</li>
+                <li>Designed data visualisations for stakeholders and collaborated with Turing Institute contributors.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2>Leadership &amp; Community</h2>
+          <p class="section-lead">
+            Shaping inclusive learning spaces and guiding peers across technical societies in Ireland and India.
+          </p>
+          <div class="timeline">
+            <div class="timeline-item">
+              <h3>Technical Lead · ACM MUJ Student Chapter</h3>
+              <span>Sep 2020 – Dec 2022</span>
+              <ul class="bullets">
+                <li>Delivered explainable AI and ChatGPT workshops to 200+ students during AI Literacy Month.</li>
+                <li>Led hackathon squads to podium finishes at Defi-Hacks, CryptX, and Ctrl-Alt-MUJ (winners).</li>
+              </ul>
+            </div>
+            <div class="timeline-item">
+              <h3>Curation Co-Lead · Litmus MUJ</h3>
+              <span>Feb 2022 – Dec 2022</span>
+              <ul class="bullets">
+                <li>Curated programming for the Dead Reader’s Society book club and coordinated 1K+ attendee events.</li>
+              </ul>
+            </div>
+            <div class="timeline-item">
+              <h3>Caveat Lector Publishing Team · UCD Literature Society</h3>
+              <span>Oct 2024 – Present</span>
+              <ul class="bullets">
+                <li>Developing editorial pipelines that uplift new writers and visual storytellers on campus.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <h2>Skills Stack</h2>
+          <p class="section-lead">
+            Tools and platforms I rely on to turn raw data into reliable products that scale.
+          </p>
+          <div class="skills-grid">
+            <div class="skill-block">
+              <h3>Languages</h3>
+              <p>Python, R, SQL, Java, C++</p>
+            </div>
+            <div class="skill-block">
+              <h3>ML &amp; Data</h3>
+              <p>Pandas, NumPy, TensorFlow, PyTorch, Keras, OpenCV, SpaCy, NLTK, LightGBM</p>
+            </div>
+            <div class="skill-block">
+              <h3>Platforms</h3>
+              <p>AWS (Lambda, EC2, S3), Google Cloud, Azure ML Studio, Salesforce, IBM Watson, MLflow</p>
+            </div>
+            <div class="skill-block">
+              <h3>Data Ops</h3>
+              <p>MongoDB, MySQL, Oracle, Tableau, Vega-Lite, Git, GitHub, Jira, Kanban</p>
+            </div>
+            <div class="skill-block">
+              <h3>Core Strengths</h3>
+              <p>Communication, cross-functional collaboration, rapid prototyping, adaptable problem solving.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="contact-card">
+            <h2>Let’s build what’s next</h2>
+            <p>
+              Whether it’s architecting a production-ready ML pipeline or publishing research-backed insights, I’m excited to collaborate with mission-driven teams.
+            </p>
+            <div class="links-row">
+              <a class="btn btn-primary" href="mailto:kshitijsdutta@gmail.com">Start a conversation</a>
+              <a
+                class="btn btn-ghost"
+                href="https://www.linkedin.com/in/kshitij-sekhar-dutta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Connect on LinkedIn
+              </a>
+              <a
+                class="btn btn-ghost"
+                href="https://github.com/Morph23"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Explore GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <footer>
-      © <span id="year"></span> Kshitij Sekhar Dutta. All rights reserved.
+      © <span id="year"></span> Kshitij Sekhar Dutta · Crafted with curiosity and clean code.
     </footer>
 
     <script>
-      // Auto-update year
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
