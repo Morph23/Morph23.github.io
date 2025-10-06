@@ -27,7 +27,7 @@ const revealElements = () => {
     }
 
     if (!element.style.getPropertyValue("--delay")) {
-      const computedDelay = Math.min(index * 0.06, 0.35);
+      const computedDelay = Math.min(index * 0.02, 0.08);
       element.style.setProperty("--delay", `${computedDelay.toFixed(2)}s`);
     }
   });
