@@ -2,6 +2,8 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
 
 const shouldReduceMotion = () => prefersReducedMotion.matches;
 
+let revealObserver;
+
 const setCurrentYear = () => {
   const yearElement = document.getElementById("year");
   if (yearElement) {
@@ -31,29 +33,47 @@ const revealElements = () => {
   });
 
   if ("IntersectionObserver" in window && !shouldReduceMotion()) {
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
+    if (revealObserver) {
+      revealObserver.disconnect();
+    }
+
+    revealObserver = new IntersectionObserver(
+      (entries) => {
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("is-visible");
-            obs.unobserve(entry.target);
+            return;
+          }
+
+          if (entry.boundingClientRect.bottom <= 0 || entry.boundingClientRect.top >= viewportHeight) {
+            entry.target.classList.remove("is-visible");
           }
         });
       },
       {
-  threshold: 0.12,
-  rootMargin: "0px 0px -6%",
+        threshold: 0.18,
+        rootMargin: "0px 0px -12%",
       }
     );
 
-    animatedElements.forEach((element) => observer.observe(element));
+    animatedElements.forEach((element) => revealObserver.observe(element));
   } else {
+    if (revealObserver) {
+      revealObserver.disconnect();
+      revealObserver = undefined;
+    }
     animatedElements.forEach((element) => element.classList.add("is-visible"));
   }
 };
 
 const onMotionPreferenceChange = (event) => {
   if (event.matches) {
+    if (revealObserver) {
+      revealObserver.disconnect();
+      revealObserver = undefined;
+    }
     document
       .querySelectorAll("[data-animate]")
       .forEach((element) => {

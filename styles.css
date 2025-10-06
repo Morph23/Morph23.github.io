@@ -559,6 +559,8 @@ ul.bullets li::before {
   padding: 24px;
   display: grid;
   gap: 12px;
+  text-align: left;
+  align-items: start;
 }
 
 .skill-block h3 {
@@ -568,9 +570,30 @@ ul.bullets li::before {
   color: rgba(255, 255, 255, 0.72);
 }
 
-.skill-block p {
-  color: var(--muted);
-  font-size: 0.94rem;
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 14px;
+  background: rgba(15, 15, 17, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.9rem;
+  color: rgba(245, 245, 245, 0.88);
+  transition: border 0.2s ease, transform 0.2s ease;
+}
+
+.skill-chip:hover {
+  border-color: rgba(74, 222, 128, 0.45);
+  transform: translateY(-2px);
 }
 
 .contact-card {
@@ -613,8 +636,8 @@ footer a:hover {
 
 [data-animate] {
   opacity: 0;
-  transform: translateY(48px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
+  transform: translateY(28px);
+  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   transition-delay: var(--delay, 0s);
 }
 
@@ -625,8 +648,8 @@ footer a:hover {
 
 @media (max-width: 640px) {
   [data-animate] {
-    transform: translateY(32px);
-    transition-duration: 0.4s;
+    transform: translateY(18px);
+    transition: opacity 0.28s cubic-bezier(0.4, 0, 0.2, 1), transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
