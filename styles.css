@@ -95,7 +95,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  inset: -18vmax;
+  inset: -30vmax;
   z-index: 0;
   background: url("assets/orbit-texture.svg") center/cover no-repeat;
   opacity: 0.58;
@@ -740,13 +740,13 @@ footer a:hover {
 
 @keyframes orbit {
   0% {
-    transform: rotate(0deg) scale(1.05);
+    transform: rotate(0deg) scale(1.3);
   }
   50% {
-    transform: rotate(180deg) scale(1.05);
+    transform: rotate(180deg) scale(1.3);
   }
   100% {
-    transform: rotate(360deg) scale(1.05);
+    transform: rotate(360deg) scale(1.3);
   }
 }
 
