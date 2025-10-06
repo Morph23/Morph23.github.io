@@ -23,6 +23,13 @@
         font-size: 16px;
       }
 
+      @media (prefers-reduced-motion: reduce) {
+        body::before {
+          animation: none;
+          opacity: 0.4;
+        }
+      }
+
       * {
         box-sizing: border-box;
         margin: 0;
@@ -44,37 +51,36 @@
       body::before {
         content: "";
         position: fixed;
-        inset: -30% -35%;
+        inset: -30% -32%;
         z-index: 0;
         background:
-          radial-gradient(1200px circle at 18% 22%, rgba(74, 222, 128, 0.16), transparent 60%),
-          radial-gradient(900px circle at 78% 28%, rgba(59, 130, 246, 0.14), transparent 62%),
-          radial-gradient(1100px circle at 52% 82%, rgba(244, 114, 182, 0.12), transparent 68%),
-          repeating-linear-gradient(120deg, rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 12px);
-        background-size: 140% 140%, 120% 120%, 160% 160%, 220% 220%;
-        filter: blur(22px);
-        transform: translate3d(0, 0, 0) scale(1.08);
-        animation: shimmer 36s ease-in-out infinite alternate;
-        opacity: 0.7;
+          radial-gradient(880px circle at 16% 24%, rgba(74, 222, 128, 0.14), transparent 62%),
+          radial-gradient(820px circle at 78% 30%, rgba(59, 130, 246, 0.1), transparent 65%),
+          radial-gradient(900px circle at 50% 78%, rgba(244, 114, 182, 0.09), transparent 70%);
+        background-size: 120% 120%, 110% 110%, 140% 140%;
+        filter: blur(14px);
+        transform: translate3d(0, 0, 0) scale(1.05);
+        animation: shimmer 28s ease-in-out infinite alternate;
+        opacity: 0.55;
         pointer-events: none;
-        mix-blend-mode: screen;
+        will-change: transform, opacity;
       }
 
       @keyframes shimmer {
         0% {
-          transform: translate3d(-6%, -4%, 0) scale(1.05) rotate(0.6deg);
-          background-position: 5% 5%, 95% 10%, 15% 85%, 0% 62%;
-          opacity: 0.68;
+          transform: translate3d(-6%, -4%, 0) scale(1.03);
+          background-position: 8% 6%, 90% 12%, 12% 84%;
+          opacity: 0.5;
         }
         50% {
-          transform: translate3d(3%, 2%, 0) scale(1.08) rotate(-0.4deg);
-          background-position: 46% 42%, 58% 36%, 52% 72%, 48% 44%;
-          opacity: 0.82;
+          transform: translate3d(3%, 2%, 0) scale(1.05);
+          background-position: 44% 40%, 60% 34%, 54% 70%;
+          opacity: 0.66;
         }
         100% {
-          transform: translate3d(6%, 4%, 0) scale(1.03) rotate(-0.6deg);
-          background-position: 95% 84%, 10% 68%, 88% 18%, 100% 26%;
-          opacity: 0.7;
+          transform: translate3d(6%, 4%, 0) scale(1.02);
+          background-position: 92% 82%, 15% 64%, 88% 20%;
+          opacity: 0.55;
         }
       }
 
