@@ -3,566 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Kshitij Sekhar Dutta · Data & AI Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      :root {
-        --bg: #050505;
-        --surface: #0f0f11;
-        --muted: #9a9a9a;
-        --accent: #4ade80;
-        --accent-soft: rgba(74, 222, 128, 0.08);
-        --text: #f5f5f5;
-        --border: rgba(255, 255, 255, 0.08);
-        --shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
-        font-size: 16px;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        body::before {
-          animation: none;
-          opacity: 0.4;
-        }
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        min-height: 100vh;
-        background: var(--bg);
-        color: var(--text);
-        font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        line-height: 1.7;
-        -webkit-font-smoothing: antialiased;
-        position: relative;
-        overflow-x: hidden;
-      }
-
-      body::before {
-        content: "";
-        position: fixed;
-        inset: -30% -32%;
-        z-index: 0;
-        background:
-          radial-gradient(880px circle at 16% 24%, rgba(74, 222, 128, 0.14), transparent 62%),
-          radial-gradient(820px circle at 78% 30%, rgba(59, 130, 246, 0.1), transparent 65%),
-          radial-gradient(900px circle at 50% 78%, rgba(244, 114, 182, 0.09), transparent 70%);
-        background-size: 120% 120%, 110% 110%, 140% 140%;
-        filter: blur(14px);
-        transform: translate3d(0, 0, 0) scale(1.05);
-        animation: shimmer 28s ease-in-out infinite alternate;
-        opacity: 0.55;
-        pointer-events: none;
-        will-change: transform, opacity;
-      }
-
-      @keyframes shimmer {
-        0% {
-          transform: translate3d(-6%, -4%, 0) scale(1.03);
-          background-position: 8% 6%, 90% 12%, 12% 84%;
-          opacity: 0.5;
-        }
-        50% {
-          transform: translate3d(3%, 2%, 0) scale(1.05);
-          background-position: 44% 40%, 60% 34%, 54% 70%;
-          opacity: 0.66;
-        }
-        100% {
-          transform: translate3d(6%, 4%, 0) scale(1.02);
-          background-position: 92% 82%, 15% 64%, 88% 20%;
-          opacity: 0.55;
-        }
-      }
-
-      main {
-        width: 100%;
-        margin: 0 auto;
-      }
-
-      section {
-        padding: 80px 6vw;
-      }
-
-      .container {
-        max-width: 1080px;
-        margin: 0 auto;
-      }
-
-      header {
-        padding: clamp(96px, 18vw, 160px) 6vw 120px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      header::before {
-        content: "";
-        position: absolute;
-        inset: -40% auto auto -30%;
-        width: clamp(420px, 60vw, 580px);
-        aspect-ratio: 1;
-        background: radial-gradient(
-          circle at center,
-          rgba(74, 222, 128, 0.22),
-          rgba(74, 222, 128, 0)
-        );
-        filter: blur(10px);
-        z-index: 0;
-      }
-
-      header::after {
-        content: "";
-        position: absolute;
-        inset: auto -20% -40% auto;
-        width: clamp(300px, 48vw, 520px);
-        aspect-ratio: 1;
-        background: radial-gradient(
-          circle at center,
-          rgba(59, 130, 246, 0.15),
-          rgba(59, 130, 246, 0)
-        );
-        filter: blur(14px);
-        z-index: 0;
-      }
-
-      .hero {
-        position: relative;
-        z-index: 1;
-        max-width: 1100px;
-        width: 100%;
-      }
-
-      .hero-layout {
-        display: flex;
-        align-items: center;
-        gap: clamp(32px, 5vw, 60px);
-        max-width: 1040px;
-      }
-
-      .hero-copy {
-        flex: 1 1 0;
-        min-width: 0;
-      }
-
-      .hero-portrait {
-        flex: 0 0 clamp(220px, 24vw, 300px);
-        border-radius: 26px;
-        position: relative;
-        overflow: hidden;
-        background: radial-gradient(circle at top left, rgba(74, 222, 128, 0.22), rgba(15, 15, 17, 0.9));
-        border: 1px solid rgba(255, 255, 255, 0.12);
-        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
-      }
-
-      .hero-portrait::after {
-        content: "";
-        position: absolute;
-        inset: 16px;
-        border-radius: 20px;
-        border: 1px solid rgba(74, 222, 128, 0.28);
-        pointer-events: none;
-        mix-blend-mode: screen;
-      }
-
-      .hero-portrait img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 20px;
-      }
-
-      .eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 6px 14px;
-        border-radius: 999px;
-        background: rgba(74, 222, 128, 0.14);
-        color: var(--accent);
-        font-size: 0.85rem;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-        margin-bottom: 24px;
-      }
-
-      .eyebrow::before {
-        content: "";
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: var(--accent);
-        box-shadow: 0 0 0 6px rgba(74, 222, 128, 0.18);
-      }
-
-      h1 {
-        font-size: clamp(2.8rem, 4vw, 4.2rem);
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        margin-bottom: 26px;
-      }
-
-      .hero p {
-        font-size: clamp(1.1rem, 1.5vw, 1.35rem);
-        color: var(--muted);
-        max-width: 44ch;
-        margin-bottom: 36px;
-      }
-
-      .cta-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        align-items: center;
-      }
-
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        border-radius: 999px;
-        padding: 14px 24px;
-        font-size: 0.98rem;
-        font-weight: 500;
-        text-decoration: none;
-        transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-      }
-
-      .btn-primary {
-        background: var(--accent);
-        color: #041205;
-        box-shadow: 0 10px 30px rgba(74, 222, 128, 0.35);
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 16px 40px rgba(74, 222, 128, 0.45);
-      }
-
-      .btn-ghost {
-        border: 1px solid var(--border);
-        color: var(--text);
-        background: rgba(255, 255, 255, 0.02);
-      }
-
-      .btn-ghost:hover {
-        background: rgba(255, 255, 255, 0.05);
-        transform: translateY(-2px);
-        border-color: rgba(255, 255, 255, 0.14);
-      }
-
-      .meta-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px 28px;
-        margin-top: 54px;
-        color: var(--muted);
-        font-size: 0.95rem;
-      }
-
-      .meta-row span {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
-      }
-
-      h2 {
-        font-size: clamp(2rem, 3vw, 2.6rem);
-        font-weight: 500;
-        letter-spacing: -0.01em;
-        margin-bottom: 18px;
-      }
-
-      .section-lead {
-        color: var(--muted);
-        max-width: 56ch;
-        margin-bottom: 48px;
-        font-size: 1.05rem;
-      }
-
-      .stats-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 24px;
-      }
-
-      .stat-card {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 18px;
-        padding: 32px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        box-shadow: var(--shadow);
-      }
-
-      .stat-card span {
-        font-size: 0.9rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--muted);
-      }
-
-      .stat-card strong {
-        font-size: clamp(2rem, 3vw, 2.8rem);
-        font-weight: 600;
-        color: var(--accent);
-      }
-
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 28px;
-      }
-
-      .card {
-        background: linear-gradient(155deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0));
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        border-radius: 20px;
-        padding: 28px;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        transition: transform 0.2s ease, border 0.2s ease, background 0.2s ease;
-        backdrop-filter: blur(6px);
-      }
-
-      .card:hover {
-        transform: translateY(-6px);
-        border-color: rgba(74, 222, 128, 0.35);
-        background: linear-gradient(155deg, rgba(74, 222, 128, 0.1), rgba(15, 15, 17, 0.65));
-      }
-
-      .card h3 {
-        font-size: 1.35rem;
-        font-weight: 500;
-      }
-
-      .card p {
-        color: var(--muted);
-        font-size: 0.98rem;
-      }
-
-      .tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-top: auto;
-      }
-
-      .tag {
-        padding: 6px 12px;
-        border-radius: 12px;
-        background: rgba(148, 163, 184, 0.12);
-        color: rgba(255, 255, 255, 0.78);
-        font-size: 0.82rem;
-        letter-spacing: 0.02em;
-      }
-
-      .card a {
-        color: var(--accent);
-        font-size: 0.94rem;
-        text-decoration: none;
-        display: inline-flex;
-        gap: 6px;
-        align-items: center;
-        margin-top: 8px;
-      }
-
-      .card a:hover {
-        text-decoration: underline;
-      }
-
-      .timeline {
-        display: grid;
-        gap: 24px;
-        position: relative;
-      }
-
-      .timeline::before {
-        content: "";
-        position: absolute;
-        left: 10px;
-        top: 4px;
-        bottom: 4px;
-        width: 1px;
-        background: rgba(255, 255, 255, 0.08);
-      }
-
-      .timeline-item {
-        position: relative;
-        padding-left: 48px;
-      }
-
-      .timeline-item::before {
-        content: "";
-        position: absolute;
-        left: 5px;
-        top: 8px;
-        width: 11px;
-        height: 11px;
-        border-radius: 50%;
-        background: var(--accent);
-        box-shadow: 0 0 0 6px var(--accent-soft);
-      }
-
-      .timeline-item h3 {
-        font-size: 1.2rem;
-        font-weight: 500;
-      }
-
-      .timeline-item span {
-        display: inline-block;
-        margin-top: 6px;
-        margin-bottom: 12px;
-        color: var(--muted);
-        font-size: 0.9rem;
-      }
-
-      ul.bullets {
-        display: grid;
-        gap: 10px;
-        color: var(--muted);
-        font-size: 0.95rem;
-        list-style: none;
-      }
-
-      ul.bullets li {
-        position: relative;
-        padding-left: 18px;
-      }
-
-      ul.bullets li::before {
-        content: "•";
-        position: absolute;
-        left: 0;
-        color: var(--accent);
-      }
-
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 22px;
-      }
-
-      .skill-block {
-        background: var(--surface);
-        border-radius: 18px;
-        border: 1px solid var(--border);
-        padding: 24px;
-        display: grid;
-        gap: 12px;
-      }
-
-      .skill-block h3 {
-        font-size: 1rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: rgba(255, 255, 255, 0.72);
-      }
-
-      .skill-block p {
-        color: var(--muted);
-        font-size: 0.94rem;
-      }
-
-      .contact-card {
-        background: linear-gradient(150deg, rgba(74, 222, 128, 0.12), rgba(4, 18, 5, 0.85));
-        border-radius: 26px;
-        border: 1px solid rgba(74, 222, 128, 0.25);
-        padding: clamp(32px, 6vw, 56px);
-        box-shadow: 0 24px 60px rgba(4, 18, 5, 0.55);
-        text-align: center;
-      }
-
-      .contact-card p {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 1.05rem;
-        margin-bottom: 28px;
-      }
-
-      .links-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 14px;
-        justify-content: center;
-      }
-
-      footer {
-        padding: 42px 6vw 60px;
-        text-align: center;
-        color: var(--muted);
-        font-size: 0.9rem;
-      }
-
-      footer a {
-        color: var(--accent);
-        text-decoration: none;
-      }
-
-      footer a:hover {
-        text-decoration: underline;
-      }
-
-      @media (max-width: 720px) {
-        header {
-          padding-top: 120px;
-          padding-bottom: 80px;
-        }
-
-        .hero-layout {
-          flex-direction: column;
-          align-items: flex-start;
-          max-width: 620px;
-        }
-
-        .hero-portrait {
-          width: 100%;
-          max-width: 320px;
-          align-self: center;
-        }
-
-        section {
-          padding: 64px 6vw;
-        }
-
-        .timeline::before {
-          left: 6px;
-        }
-
-        .timeline-item {
-          padding-left: 36px;
-        }
-
-        .timeline-item::before {
-          left: 0;
-        }
-      }
-    </style>
+    <title>Kshitij Sekhar Dutta · ML & AI Engineer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scripts/main.js" defer></script>
   </head>
   <body>
-  <main style="position: relative; z-index: 1;">
+    <main>
       <header>
         <div class="hero">
           <div class="hero-layout">
-            <div class="hero-copy">
+            <div class="hero-copy" data-animate>
               <span class="eyebrow">Data &amp; AI Engineer · Dublin</span>
               <h1>Kshitij Sekhar Dutta helps data-heavy teams ship intelligent products faster.</h1>
               <p>
@@ -597,7 +47,7 @@
                 <span>👨‍💻 Since 2020 on GitHub · 26 public repositories</span>
               </div>
             </div>
-            <figure class="hero-portrait">
+            <figure class="hero-portrait" data-animate data-tilt>
               <img
                 src="assets/ksdpic2.jpg"
                 alt="Portrait of Kshitij Sekhar Dutta"
@@ -609,29 +59,29 @@
       </header>
 
       <section>
-        <div class="container">
+        <div class="container" data-animate>
           <h2>Snapshot</h2>
           <p class="section-lead">
             A quick overview of the impact behind the code—spanning autonomous traffic enforcement,
             airport NLP, and storytelling with data-driven visuals.
           </p>
           <div class="stats-grid">
-            <article class="stat-card">
+            <article class="stat-card" data-animate>
               <span>Operational AI</span>
               <strong>98%+</strong>
               <p>Precision in real-time traffic violation detection with YOLOv8 at Wictronix.</p>
             </article>
-            <article class="stat-card">
+            <article class="stat-card" data-animate>
               <span>Intelligent Video</span>
               <strong>20%</strong>
               <p>Visual quality improvement for compressed footage via deformable GAN pipelines.</p>
             </article>
-            <article class="stat-card">
+            <article class="stat-card" data-animate>
               <span>Applied Research</span>
               <strong>220K</strong>
               <p>Reddit data points mined for published sentiment analysis in IJCA (Vol.186).</p>
             </article>
-            <article class="stat-card">
+            <article class="stat-card" data-animate>
               <span>Experience</span>
               <strong>4</strong>
               <p>Industry internships across aviation, mobility, analytics, and education sectors.</p>
@@ -641,14 +91,14 @@
       </section>
 
       <section>
-        <div class="container">
+        <div class="container" data-animate>
           <h2>Featured GitHub Work</h2>
           <p class="section-lead">
             Selected repositories from <a href="https://github.com/Morph23" target="_blank" rel="noopener noreferrer">Morph23</a>
             that reflect a hands-on approach to explainable AI, NLP, and applied computer vision.
           </p>
           <div class="grid">
-            <article class="card">
+            <article class="card" data-animate>
               <div>
                 <h3>MeetPlot</h3>
                 <p>
@@ -663,7 +113,7 @@
               <a href="https://github.com/Morph23/MeetPlot" target="_blank" rel="noopener noreferrer">Explore repository →</a>
             </article>
 
-            <article class="card">
+            <article class="card" data-animate>
               <div>
                 <h3>DiceyLoans</h3>
                 <p>
@@ -678,7 +128,7 @@
               <a href="https://github.com/Morph23/DiceyLoans" target="_blank" rel="noopener noreferrer">Explore repository →</a>
             </article>
 
-            <article class="card">
+            <article class="card" data-animate>
               <div>
                 <h3>GIFEnhancer</h3>
                 <p>
@@ -693,7 +143,7 @@
               <a href="https://github.com/Morph23/GIFEnhancer" target="_blank" rel="noopener noreferrer">Explore repository →</a>
             </article>
 
-            <article class="card">
+            <article class="card" data-animate>
               <div>
                 <h3>AnimalMaker</h3>
                 <p>
@@ -712,13 +162,13 @@
       </section>
 
       <section>
-        <div class="container">
+        <div class="container" data-animate>
           <h2>Projects in Focus</h2>
           <p class="section-lead">
             Recent academic and independent builds connecting research grounded theory with measurable business value.
           </p>
           <div class="grid">
-            <article class="card">
+            <article class="card" data-animate>
               <div>
                 <h3>Compressed Video Enhancement</h3>
                 <p>
@@ -732,7 +182,7 @@
               </div>
             </article>
 
-            <article class="card">
+            <article class="card" data-animate>
               <div>
                 <h3>Sales Forecasting with CNN-LSTM</h3>
                 <p>
@@ -746,7 +196,7 @@
               </div>
             </article>
 
-            <article class="card">
+            <article class="card" data-animate>
               <div>
                 <h3>Sentiment Intelligence for AdTech</h3>
                 <p>
@@ -764,13 +214,13 @@
       </section>
 
       <section>
-        <div class="container">
+        <div class="container" data-animate>
           <h2>Experience</h2>
           <p class="section-lead">
             Blending academic research and industry rotations to architect AI systems that are reliable, efficient, and ready for production.
           </p>
           <div class="timeline">
-            <div class="timeline-item">
+            <div class="timeline-item" data-animate>
               <h3>Intern · Adani Airport Holdings Ltd</h3>
               <span>Feb 2024 – Apr 2024 · Ahmedabad</span>
               <ul class="bullets">
@@ -780,7 +230,7 @@
               </ul>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item" data-animate>
               <h3>AI/ML Intern · Wictronix</h3>
               <span>Jun 2023 – Aug 2023 · Bengaluru</span>
               <ul class="bullets">
@@ -789,7 +239,7 @@
               </ul>
             </div>
 
-            <div class="timeline-item">
+            <div class="timeline-item" data-animate>
               <h3>Intern · DeFactoED</h3>
               <span>May 2023 – Jul 2023 · Remote</span>
               <ul class="bullets">
@@ -802,13 +252,13 @@
       </section>
 
       <section>
-        <div class="container">
+        <div class="container" data-animate>
           <h2>Leadership &amp; Community</h2>
           <p class="section-lead">
             Shaping inclusive learning spaces and guiding peers across technical societies in Ireland and India.
           </p>
           <div class="timeline">
-            <div class="timeline-item">
+            <div class="timeline-item" data-animate>
               <h3>Technical Lead · ACM MUJ Student Chapter</h3>
               <span>Sep 2020 – Dec 2022</span>
               <ul class="bullets">
@@ -816,14 +266,14 @@
                 <li>Led hackathon squads to podium finishes at Defi-Hacks, CryptX, and Ctrl-Alt-MUJ (winners).</li>
               </ul>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item" data-animate>
               <h3>Curation Co-Lead · Litmus MUJ</h3>
               <span>Feb 2022 – Dec 2022</span>
               <ul class="bullets">
                 <li>Curated programming for the Dead Reader’s Society book club and coordinated 1K+ attendee events.</li>
               </ul>
             </div>
-            <div class="timeline-item">
+            <div class="timeline-item" data-animate>
               <h3>Caveat Lector Publishing Team · UCD Literature Society</h3>
               <span>Oct 2024 – Present</span>
               <ul class="bullets">
@@ -835,29 +285,29 @@
       </section>
 
       <section>
-        <div class="container">
+        <div class="container" data-animate>
           <h2>Skills Stack</h2>
           <p class="section-lead">
             Tools and platforms I rely on to turn raw data into reliable products that scale.
           </p>
           <div class="skills-grid">
-            <div class="skill-block">
+            <div class="skill-block" data-animate>
               <h3>Languages</h3>
               <p>Python, R, SQL, Java, C++</p>
             </div>
-            <div class="skill-block">
+            <div class="skill-block" data-animate>
               <h3>ML &amp; Data</h3>
               <p>Pandas, NumPy, TensorFlow, PyTorch, Keras, OpenCV, SpaCy, NLTK, LightGBM</p>
             </div>
-            <div class="skill-block">
+            <div class="skill-block" data-animate>
               <h3>Platforms</h3>
               <p>AWS (Lambda, EC2, S3), Google Cloud, Azure ML Studio, Salesforce, IBM Watson, MLflow</p>
             </div>
-            <div class="skill-block">
+            <div class="skill-block" data-animate>
               <h3>Data Ops</h3>
               <p>MongoDB, MySQL, Oracle, Tableau, Vega-Lite, Git, GitHub, Jira, Kanban</p>
             </div>
-            <div class="skill-block">
+            <div class="skill-block" data-animate>
               <h3>Core Strengths</h3>
               <p>Communication, cross-functional collaboration, rapid prototyping, adaptable problem solving.</p>
             </div>
@@ -866,8 +316,8 @@
       </section>
 
       <section>
-        <div class="container">
-          <div class="contact-card">
+        <div class="container" data-animate>
+          <div class="contact-card" data-animate>
             <h2>Let’s build what’s next</h2>
             <p>
               Whether it’s architecting a production-ready ML pipeline or publishing research-backed insights, I’m excited to collaborate with mission-driven teams.
@@ -899,9 +349,5 @@
     <footer>
       © <span id="year"></span> Kshitij Sekhar Dutta · Crafted with curiosity and clean code.
     </footer>
-
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
   </body>
 </html>
