@@ -294,6 +294,43 @@ h1 {
   margin: 0;
 }
 
+.hero-greeting {
+  display: block;
+  font-size: clamp(1.1rem, 1.8vw, 1.6rem);
+  font-weight: 400;
+  color: rgba(245, 245, 245, 0.68);
+  margin-bottom: 10px;
+}
+
+.hero-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 1.2em;
+  line-height: 1.2;
+  flex-wrap: wrap;
+}
+
+#typewriter-text {
+  display: inline-block;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.hero-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.2em;
+  background: currentColor;
+  border-radius: 999px;
+  animation: cursorBlink 0.85s steps(2, start) infinite;
+}
+
+.hero-cursor[data-active="false"] {
+  animation: none;
+  opacity: 0.4;
+}
+
 .hero p {
   font-size: clamp(1.1rem, 1.5vw, 1.35rem);
   color: var(--muted);
@@ -644,6 +681,18 @@ footer a:hover {
 [data-animate].is-visible {
   opacity: 1;
   transform: none;
+}
+
+@keyframes cursorBlink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (max-width: 640px) {
