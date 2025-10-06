@@ -25,7 +25,7 @@ const revealElements = () => {
     }
 
     if (!element.style.getPropertyValue("--delay")) {
-      const computedDelay = Math.min(index * 0.08, 0.6);
+      const computedDelay = Math.min(index * 0.06, 0.35);
       element.style.setProperty("--delay", `${computedDelay.toFixed(2)}s`);
     }
   });
@@ -41,8 +41,8 @@ const revealElements = () => {
         });
       },
       {
-        threshold: 0.15,
-        rootMargin: "0px 0px -10%",
+  threshold: 0.12,
+  rootMargin: "0px 0px -6%",
       }
     );
 

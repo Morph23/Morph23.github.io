@@ -1,0 +1,35 @@
+<svg width="900" height="900" viewBox="0 0 900 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="900" fill="#09090B"/>
+  <g opacity="0.6" filter="url(#blur1)">
+    <circle cx="300" cy="280" r="220" fill="url(#grad1)"/>
+  </g>
+  <g opacity="0.45" filter="url(#blur2)">
+    <circle cx="640" cy="320" r="200" fill="url(#grad2)"/>
+  </g>
+  <g opacity="0.4" filter="url(#blur3)">
+    <circle cx="420" cy="640" r="240" fill="url(#grad3)"/>
+  </g>
+  <defs>
+    <radialGradient id="grad1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(300 280) rotate(90) scale(220)">
+      <stop stop-color="#4ADE80" stop-opacity="0.75"/>
+      <stop offset="1" stop-color="#4ADE80" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="grad2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(640 320) rotate(90) scale(200)">
+      <stop stop-color="#3B82F6" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="grad3" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(420 640) rotate(90) scale(240)">
+      <stop stop-color="#F472B6" stop-opacity="0.65"/>
+      <stop offset="1" stop-color="#F472B6" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur1" x="30" y="10" width="540" height="540" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="48"/>
+    </filter>
+    <filter id="blur2" x="370" y="50" width="540" height="540" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="42"/>
+    </filter>
+    <filter id="blur3" x="150" y="370" width="540" height="540" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="56"/>
+    </filter>
+  </defs>
+</svg>

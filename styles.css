@@ -95,20 +95,13 @@ body {
 body::before {
   content: "";
   position: fixed;
-  top: -60vh;
-  left: -60vw;
-  width: 220vw;
-  height: 220vh;
+  inset: -18vmax;
   z-index: 0;
-  background:
-    radial-gradient(circle at 25% 30%, rgba(74, 222, 128, 0.2), transparent 58%),
-    radial-gradient(circle at 70% 35%, rgba(59, 130, 246, 0.16), transparent 62%),
-    radial-gradient(circle at 48% 75%, rgba(244, 114, 182, 0.14), transparent 64%);
-  opacity: 0.6;
-  filter: saturate(118%);
+  background: url("assets/orbit-texture.svg") center/cover no-repeat;
+  opacity: 0.58;
   pointer-events: none;
   transform-origin: 50% 50%;
-  animation: orbit 84s linear infinite;
+  animation: orbit 96s linear infinite;
   will-change: transform;
 }
 
@@ -119,9 +112,9 @@ body::after {
   z-index: 0;
   background-image: radial-gradient(rgba(255, 255, 255, 0.18) 0 1.2px, transparent 1.8px);
   background-size: 140px 140px;
-  opacity: 0.28;
+  opacity: 0.22;
   pointer-events: none;
-  animation: twinkle 46s linear infinite;
+  animation: twinkle 48s linear infinite;
   will-change: background-position;
 }
 
@@ -195,7 +188,7 @@ header::after {
   background: linear-gradient(145deg, rgba(18, 18, 20, 0.96), rgba(8, 8, 10, 0.92));
   border-radius: 32px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.38);
   overflow: hidden;
   align-items: center;
   isolation: isolate;
@@ -208,20 +201,20 @@ header::after {
   inset: auto;
   border-radius: 999px;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0.4;
 }
 
 .hero-card::before {
-  width: 400px;
-  height: 400px;
+  width: 320px;
+  height: 320px;
   top: -180px;
   right: -140px;
   background: radial-gradient(circle at center, rgba(74, 222, 128, 0.45), rgba(74, 222, 128, 0));
 }
 
 .hero-card::after {
-  width: 260px;
-  height: 260px;
+  width: 220px;
+  height: 220px;
   bottom: -160px;
   left: -120px;
   background: radial-gradient(circle at center, rgba(59, 130, 246, 0.3), rgba(59, 130, 246, 0));
@@ -243,7 +236,7 @@ header::after {
   border-radius: 26px;
   overflow: hidden;
   background: linear-gradient(160deg, rgba(74, 222, 128, 0.22), rgba(59, 130, 246, 0.12) 55%, rgba(15, 15, 17, 0.88));
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.4);
   width: clamp(240px, 26vw, 320px);
   aspect-ratio: 3 / 4;
   align-self: center;
@@ -253,10 +246,10 @@ header::after {
 .hero-portrait::before {
   content: "";
   position: absolute;
-  inset: 12%;
-  background: radial-gradient(circle at 65% 30%, rgba(255, 255, 255, 0.14), transparent 72%);
-  mix-blend-mode: screen;
-  opacity: 0.6;
+  inset: 0;
+  background: linear-gradient(165deg, rgba(0, 0, 0, 0.18), transparent 55%);
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .hero-portrait img {
@@ -621,13 +614,20 @@ footer a:hover {
 [data-animate] {
   opacity: 0;
   transform: translateY(48px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition: opacity 0.55s ease, transform 0.55s ease;
   transition-delay: var(--delay, 0s);
 }
 
 [data-animate].is-visible {
   opacity: 1;
   transform: none;
+}
+
+@media (max-width: 640px) {
+  [data-animate] {
+    transform: translateY(32px);
+    transition-duration: 0.4s;
+  }
 }
 
 @keyframes orbit {
