@@ -295,14 +295,6 @@ h1 {
 }
 
 
-.hero-greeting {
-  display: block;
-  font-size: clamp(0.9rem, 1.2vw, 1.2rem);
-  font-weight: 400;
-  color: rgba(245, 245, 245, 0.68);
-  margin-bottom: 6px;
-}
-
 .hero-typewrap {
   display: inline-flex;
   align-items: center;
