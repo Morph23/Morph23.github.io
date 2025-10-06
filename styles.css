@@ -382,6 +382,7 @@ h1 {
   padding: 14px 24px;
   font-size: 0.98rem;
   font-weight: 500;
+  font-family: "Helvetica Neue", sans-serif;
   text-decoration: none;
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
@@ -716,6 +717,7 @@ ul.bullets li::before {
   background: rgba(4, 18, 5, 0.35);
   color: rgba(245, 245, 245, 0.92);
   font-size: 1rem;
+  font-family: "Helvetica Neue", sans-serif;
   min-height: 54px;
   transition: border 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
