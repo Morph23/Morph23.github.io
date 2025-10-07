@@ -8,8 +8,46 @@
     <script src="scripts/main.js" defer></script>
   </head>
   <body>
+    <nav class="quick-nav" aria-label="Section navigation">
+      <a class="quick-nav__item" href="#hero">
+        <span class="quick-nav__icon" aria-hidden="true">⌂</span>
+        <span class="sr-only">Top</span>
+      </a>
+      <a class="quick-nav__item" href="#quick-glance">
+        <span class="quick-nav__icon" aria-hidden="true">⚡</span>
+        <span class="sr-only">Quick Glance</span>
+      </a>
+      <a class="quick-nav__item" href="#fun-projects">
+        <span class="quick-nav__icon" aria-hidden="true">🎨</span>
+        <span class="sr-only">Fun Projects</span>
+      </a>
+      <a class="quick-nav__item" href="#academic-projects">
+        <span class="quick-nav__icon" aria-hidden="true">🎓</span>
+        <span class="sr-only">Academic Projects</span>
+      </a>
+      <a class="quick-nav__item" href="#publications">
+        <span class="quick-nav__icon" aria-hidden="true">📄</span>
+        <span class="sr-only">Publications</span>
+      </a>
+      <a class="quick-nav__item" href="#experience">
+        <span class="quick-nav__icon" aria-hidden="true">🛠️</span>
+        <span class="sr-only">Experience</span>
+      </a>
+      <a class="quick-nav__item" href="#leadership">
+        <span class="quick-nav__icon" aria-hidden="true">🤝</span>
+        <span class="sr-only">Leadership &amp; Community</span>
+      </a>
+      <a class="quick-nav__item" href="#skills">
+        <span class="quick-nav__icon" aria-hidden="true">🧰</span>
+        <span class="sr-only">Skills Stack</span>
+      </a>
+      <a class="quick-nav__item" href="#contact">
+        <span class="quick-nav__icon" aria-hidden="true">✉️</span>
+        <span class="sr-only">Contact</span>
+      </a>
+    </nav>
     <main>
-      <header>
+      <header id="hero">
         <div class="hero">
           <div class="hero-card" data-animate>
             <div class="hero-copy">
@@ -78,7 +116,7 @@
         </div>
       </header>
 
-      <section>
+  <section id="quick-glance">
         <div class="container" data-animate>
           <h2>Quick Glance</h2>
           <div class="stats-grid">
@@ -106,7 +144,7 @@
         </div>
       </section>
 
-      <section>
+  <section id="fun-projects">
         <div class="container" data-animate>
           <h2>Fun Projects</h2>
           <p class="section-lead">
@@ -187,11 +225,11 @@
               <div>
                 <h3>AIAssessmentTool</h3>
                 <p>
-                  Automated rubric scoring pipeline blending transformer embeddings and rubric heuristics to streamline grading and feedback workflows.
+                  Tool made for judging a teacher's AI-readiness, in collaboration with DeFactoED. The website was built from the ground up by me and uses a marking rubric and OpenAI API's to generate a personalized summary for each teacher.
                 </p>
               </div>
               <div class="tags">
-                <span class="tag">EdTech</span>
+                <span class="tag">AI in Education</span>
                 <span class="tag">Javascript</span>
               </div>
               <a href="https://github.com/Morph23/AIAssessmentTool" target="_blank" rel="noopener noreferrer">Explore repository →</a>
@@ -200,59 +238,99 @@
         </div>
       </section>
 
-      <section>
+  <section id="academic-projects">
         <div class="container" data-animate>
-          <h2>Projects in Focus</h2>
+          <h2>Academic Projects</h2>
           <p class="section-lead">
-            Recent academic and independent builds connecting research grounded theory with measurable business value.
+            Highlights from recent UCD coursework and collaborations where I translated theory into usable prototypes.
           </p>
           <div class="grid">
             <article class="card" data-animate>
               <div>
-                <h3>Compressed Video Enhancement</h3>
+                <h3>CLI Agent for Multi-Tool Automation</h3>
                 <p>
-                  Deployed deformable convolution GANs with QP-aware modules to restore H.265 footage, elevating visual fidelity by ~20% across varied bitrates.
+                  UCD capstone project in which we developed an AI-powered assistant with MCP integration that lets you manage dev tools, environments, SSH/Git, VS Code extensions, and generate code using natural language. Fully supports Windows, macOS, and Linux (Debian/Ubuntu based) with platform‑aware install logic.
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">MCP</span>
+                <span class="tag">Git</span>
+                <span class="tag">VSCode</span>
+              </div>
+                <a href="https://github.com/Morph23/CLI-Agent" target="_blank" rel="noopener noreferrer">Explore project →</a>
+            </article>
+
+            <article class="card" data-animate>
+              <div>
+                <h3>sCurVy</h3>
+                <p>
+                  Resume/Cover Letter assistant that uses OpenAI's Assistant's API with RAG sourced resume tips for targeted advice 
+                </p>
+              </div>
+              <div class="tags">
+                <span class="tag">RAG</span>
+                <span class="tag">FAISS</span>
+                <span class="tag">Custom Functions</span>
+              </div>
+                <a href="https://github.com/Morph23/Gen-AI-Assignment" target="_blank" rel="noopener noreferrer">Explore project →</a>
+            </article>
+
+            <article class="card" data-animate>
+              <div>
+                <h3>Twitter Emotion Classification</h3>
+                <p>
+                  End-to-end Twitter emotion classification with NLTK preprocessing, stratified splits, Keras and PyTorch tokenization, and three models (PyTorch MLP/CNN, Keras Bi-LSTM).
                 </p>
               </div>
               <div class="tags">
                 <span class="tag">PyTorch</span>
-                <span class="tag">GAN</span>
-                <span class="tag">CUDA</span>
-              </div>
-            </article>
-
-            <article class="card" data-animate>
-              <div>
-                <h3>Sales Forecasting with CNN-LSTM</h3>
-                <p>
-                  Blended temporal convolutions, lag features, and LightGBM tuning to deliver robust demand predictions on high-frequency retail datasets.
-                </p>
-              </div>
-              <div class="tags">
-                <span class="tag">Time Series</span>
-                <span class="tag">TensorFlow</span>
-                <span class="tag">LightGBM</span>
-              </div>
-            </article>
-
-            <article class="card" data-animate>
-              <div>
-                <h3>Sentiment Intelligence for AdTech</h3>
-                <p>
-                  Published study combining bot detection, VADER sentiment, and readability scores to rank subreddits for campaign relevance from 220K datapoints.
-                </p>
-              </div>
-              <div class="tags">
+                <span class="tag">Keras</span>
                 <span class="tag">NLP</span>
-                <span class="tag">Data Mining</span>
-                <span class="tag">Research</span>
               </div>
+                <a href="https://github.com/Morph23/Deep-Learning-Assignment" target="_blank" rel="noopener noreferrer">Explore project →</a>
             </article>
           </div>
         </div>
       </section>
 
-      <section>
+  <section id="publications">
+        <div class="container" data-animate>
+          <h2>Publications</h2>
+          <div class="publication-card">
+            <div class="publication-meta">
+              <h3>Data Extraction and Sentiment Analysis of Social Media</h3>
+              <span class="publication-journal">
+                International Journal of Computer Applications (ISSN 0975-8887) · Volume 186 No.24 · June 2024
+              </span>
+            </div>
+            <ul class="publication-points">
+              <li>
+                Utilized Reddit APIs to build a crawler that harvested 220K+ posts across targeted subreddits, delivering a
+                structured dataset for downstream analysis.
+              </li>
+              <li>
+                Applied VADER sentiment models and topic correlations to achieve 85% accuracy in mapping tone shifts vs. discussion frequency.
+              </li>
+              <li>
+                Surfaced emerging narratives by clustering subreddit discourse, exposing sentiment polarity trends to stakeholders.
+              </li>
+              <li>
+                Outlined practical deployment considerations, including ethical guardrails for research-grade social listening.
+              </li>
+            </ul>
+            <a
+              class="publication-link"
+              href="https://www.ijcaonline.org/archives/volume186/number24/data-extraction-and-sentiment-analysis-of-social-media/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read publication →
+            </a>
+          </div>
+        </div>
+      </section>
+
+  <section id="experience">
         <div class="container" data-animate>
           <h2>Experience</h2>
           <p class="section-lead">
@@ -290,40 +368,50 @@
         </div>
       </section>
 
-      <section>
+  <section id="leadership">
         <div class="container" data-animate>
           <h2>Leadership &amp; Community</h2>
           <p class="section-lead">
-            Shaping inclusive learning spaces and guiding peers across technical societies in Ireland and India.
+            Active participation in communities across Ireland and India.
           </p>
+          <div class="timeline-item" data-animate>
+              <h3>Caveat Lector Publishing Team · UCD Literature Society</h3>
+              <span>Oct 2024 – May 2025</span>
+              <ul class="bullets">
+                <li>Established a clear support system for aspiring authors to get their work published in the Caveat Lector Magazine.</li>
+                <li>Reviewed and selected articles and photos for the magazine.</li>
+              </ul>
+            </div>
           <div class="timeline">
             <div class="timeline-item" data-animate>
               <h3>Technical Lead · ACM MUJ Student Chapter</h3>
               <span>Sep 2020 – Dec 2022</span>
               <ul class="bullets">
                 <li>Delivered explainable AI and ChatGPT workshops to 200+ students during AI Literacy Month.</li>
-                <li>Led hackathon squads to podium finishes at Defi-Hacks, CryptX, and Ctrl-Alt-MUJ (winners).</li>
+                <li>Conducted and participated in hackathons like Defi-Hacks, CryptX, and Ctrl-Alt-MUJ.</li>
               </ul>
             </div>
             <div class="timeline-item" data-animate>
               <h3>Curation Co-Lead · Litmus MUJ</h3>
               <span>Feb 2022 – Dec 2022</span>
               <ul class="bullets">
-                <li>Curated programming for the Dead Reader’s Society book club and coordinated 1K+ attendee events.</li>
+                <li>Curated novels, articles and poems for the Dead Reader’s Society book club.</li>
+                <li>Organized and coordinated events with 1K+ attendees.</li>
               </ul>
             </div>
             <div class="timeline-item" data-animate>
-              <h3>Caveat Lector Publishing Team · UCD Literature Society</h3>
-              <span>Oct 2024 – Present</span>
+              <h3>Teaching Volunteer · BGS National Public School India</h3>
+              <span>Apr 2023 – Jan 2024</span>
               <ul class="bullets">
-                <li>Developing editorial pipelines that uplift new writers and visual storytellers on campus.</li>
+                <li>Taught 30+ Right To Education students from impoverished backgrounds; various subjects such as English, Mathematics and Computer Science at a Middle School level.</li>
+                <li>Developed teaching materials such as PowerPoint Presentations, worksheets and charts.</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section>
+  <section id="skills">
         <div class="container" data-animate>
           <h2>Skills Stack</h2>
           <p class="section-lead">
@@ -392,7 +480,7 @@
         </div>
       </section>
 
-      <section>
+  <section id="contact">
         <div class="container" data-animate>
           <div class="contact-card" data-animate>
             <h2>Let’s build what’s next</h2>
